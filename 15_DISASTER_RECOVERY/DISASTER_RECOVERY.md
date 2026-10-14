@@ -1,0 +1,25 @@
+# Disaster Recovery — GOTOSOCIAL
+
+**Company:** Anticloud FZ LLE
+**Model:** PAX L5 Narrow L2 General 27B
+**Project:** GOTOSOCIAL | Category: CONSUMER_ELECTRONICS
+**Upstream:** https://github.com/superseriousbusiness/gotosocial (MIT)
+
+## Overview
+
+This document covers disaster recovery for the Anticloud integration of GOTOSOCIAL.
+
+(swap) Use: github.com/revoxhere/duino-coin — IoT coin for ESP8266 devices
+
+## Anticloud Integration
+
+PAX L5 Narrow L2 General 27B is integrated into GOTOSOCIAL to provide:
+- Local AI inference with zero cloud dependency
+- AIOSS tamper-evident audit chain
+- AES-256 encryption at rest
+- Single-binary deployment
+
+## Contact
+
+Lois-Kleinner Alpasan — CEO & CTO, Anticloud FZ LLE
+lois@0-1.gg | 0-1.gg
