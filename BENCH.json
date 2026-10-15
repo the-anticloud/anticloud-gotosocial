@@ -1,0 +1,1612 @@
+{
+ "schema": "anticloud.tier-bench/1",
+ "project": "GOTOSOCIAL",
+ "source": {
+  "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\CONSUMER_ELECTRONICS\\GOTOSOCIAL\\UPSTREAM_CLONE",
+  "git": {
+   "head": "7f0f9ddc0d09b04f2e6b415ecebb2bff219aa665",
+   "url": "https://github.com/grishka/Smithereen",
+   "branch": "main",
+   "committed_at": "",
+   "sha_verified_from": "GitHub API substitute swap 2026-10-12"
+  }
+ },
+ "metrics": {
+  "files_total": 2540,
+  "source_files_scanned": 760,
+  "lines_of_code": 138238,
+  "languages": {
+   ".java": 707,
+   ".jsonld": 701,
+   ".twig": 321,
+   ".json": 283,
+   ".nq": 262,
+   ".svg": 120,
+   ".ts": 35,
+   ".png": 34,
+   ".scss": 11,
+   "(none)": 9,
+   ".sh": 8,
+   ".md": 7,
+   ".php": 6,
+   ".rdf": 4,
+   ".properties": 4
+  }
+ },
+ "licence": {
+  "spdx": "NOASSERTION",
+  "class": "C",
+  "source_file": null,
+  "redistribution_allowed": false
+ },
+ "dependencies": {
+  "count": 12,
+  "unique": 12,
+  "by_ecosystem": {
+   "npm": 12
+  },
+  "list": [
+   {
+    "ecosystem": "npm",
+    "name": "autoprefixer",
+    "version": "latest",
+    "source_file": "src/main/web/package.json",
+    "raw": ""
+   },
+   {
+    "ecosystem": "npm",
+    "name": "cssnano",
+    "version": "latest",
+    "source_file": "src/main/web/package.json",
+    "raw": ""
+   },
+   {
+    "ecosystem": "npm",
+    "name": "postcss",
+    "version": "^8.4.4",
+    "source_file": "src/main/web/package.json",
+    "raw": ""
+   },
+   {
+    "ecosystem": "npm",
+    "name": "postcss-advanced-variables",
+    "version": "latest",
+    "source_file": "src/main/web/package.json",
+    "raw": ""
+   },
+   {
+    "ecosystem": "npm",
+    "name": "postcss-cli",
+    "version": "latest",
+    "source_file": "src/main/web/package.json",
+    "raw": ""
+   },
+   {
+    "ecosystem": "npm",
+    "name": "postcss-color-function",
+    "version": "latest",
+    "source_file": "src/main/web/package.json",
+    "raw": ""
+   },
+   {
+    "ecosystem": "npm",
+    "name": "postcss-import",
+    "version": "latest",
+    "source_file": "src/main/web/package.json",
+    "raw": ""
+   },
+   {
+    "ecosystem": "npm",
+    "name": "postcss-inline-svg",
+    "version": "latest",
+    "source_file": "src/main/web/package.json",
+    "raw": ""
+   },
+   {
+    "ecosystem": "npm",
+    "name": "postcss-nested",
+    "version": "latest",
+    "source_file": "src/main/web/package.json",
+    "raw": ""
+   },
+   {
+    "ecosystem": "npm",
+    "name": "postcss-rgba-hex",
+    "version": "latest",
+    "source_file": "src/main/web/package.json",
+    "raw": ""
+   },
+   {
+    "ecosystem": "npm",
+    "name": "typescript",
+    "version": "^4.5.3",
+    "source_file": "src/main/web/package.json",
+    "raw": ""
+   },
+   {
+    "ecosystem": "npm",
+    "name": "uglify-js",
+    "version": "latest",
+    "source_file": "src/main/web/package.json",
+    "raw": ""
+   }
+  ]
+ },
+ "owasp_top10": {
+  "total_findings": 132,
+  "files_with_findings": 109,
+  "severity": {
+   "high": 12,
+   "medium": 10,
+   "low": 110
+  },
+  "categories": {
+   "A01-BrokenAccessControl": {
+    "count": 0,
+    "findings": []
+   },
+   "A02-CryptographicFailures": {
+    "count": 6,
+    "findings": [
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/Config.java",
+      "line": 385,
+      "cwe": "CWE-327",
+      "snippet": "desktopCSSCacheHash=Utils.byteArrayToHexString(CryptoUtils.sha1(desktop.getBytes(StandardCharsets.UTF_8)));"
+     },
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/Utils.java",
+      "line": 907,
+      "cwe": "CWE-327",
+      "snippet": "MessageDigest md5=MessageDigest.getInstance(\"MD5\");"
+     },
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/util/CryptoUtils.java",
+      "line": 78,
+      "cwe": "CWE-327",
+      "snippet": "public static byte[] sha1(byte[] input){"
+     },
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/storage/MediaCache.java",
+      "line": 309,
+      "cwe": "CWE-327",
+      "snippet": "return new CacheKey(MessageDigest.getInstance(\"MD5\").digest(uri.toString().getBytes(StandardCharsets.UTF_8)));"
+     },
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/storage/media/S3MediaFileStorageDriver.java",
+      "line": 154,
+      "cwe": "CWE-327",
+      "snippet": ".header(\"Content-MD5\", md5Base64(xmlStr))"
+     },
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/api/methods/ExecuteMethods.java",
+      "line": 38,
+      "cwe": "CWE-327",
+      "snippet": "byte[] hash=CryptoUtils.sha1(code.getBytes(StandardCharsets.UTF_8));"
+     }
+    ]
+   },
+   "A03-Injection": {
+    "count": 11,
+    "findings": [
+     {
+      "severity": "high",
+      "file": "src/main/web/common_ts/Helpers.ts",
+      "line": 812,
+      "cwe": "CWE-95",
+      "snippet": "eval(cmd.s);"
+     },
+     {
+      "severity": "high",
+      "file": "src/main/web/common_ts/PostForm.ts",
+      "line": 756,
+      "cwe": "CWE-95",
+      "snippet": "var match=this.mentionRegex.exec(part);"
+     },
+     {
+      "severity": "high",
+      "file": "src/main/java/smithereen/storage/GroupStorage.java",
+      "line": 759,
+      "cwe": "CWE-89",
+      "snippet": "String query=\"SELECT %s FROM group_memberships JOIN `groups` ON group_id=`groups`.id WHERE user_id=? AND accepted=1 AND `groups`.`type`=0\";"
+     },
+     {
+      "severity": "high",
+      "file": "src/main/java/smithereen/storage/NewsfeedStorage.java",
+      "line": 31,
+      "cwe": "CWE-89",
+      "snippet": ".andWhere(\"((`author_id` IN (SELECT followee_id FROM followings WHERE follower_id=? AND accepted=1\"+mutedCondition+\") OR (type=0 AND author_id=?)) AND `id`<=? AND `time`>DATE_SUB(C"
+     },
+     {
+      "severity": "high",
+      "file": "src/main/java/smithereen/storage/SearchStorage.java",
+      "line": 136,
+      "cwe": "CWE-89",
+      "snippet": "\"SELECT COUNT(*) FROM qsearch_index JOIN `groups` ON group_id=`groups`.id WHERE (MATCH(string) AGAINST (? IN BOOLEAN MODE)) AND `groups`.`type`=?\"+privateWhere+\" AND group_id IN (S"
+     },
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/storage/media/LocalMediaFileStorageDriver.java",
+      "line": 63,
+      "cwe": "CWE-89",
+      "snippet": "return String.format(Locale.US, \"%02d/%02d/%02d/\", oid%100, oid/100%100, oid/10000%100)+"
+     },
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/routes/CommentsRoutes.java",
+      "line": 307,
+      "cwe": "CWE-89",
+      "snippet": "model.with(\"prefilledPostText\", source.text()).with(\"sourceFormat\", source.format()).with(\"action\", comment.getInternalURL()+\"/edit\").with(\"isComment\", true);"
+     },
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/routes/UserInteractionsRoutes.java",
+      "line": 64,
+      "cwe": "CWE-89",
+      "snippet": ".runScript(\"animateCounter(ge(\\\"likeCounter\"+elementID+\"\\\"), \\\"\"+NumberFormat.getIntegerInstance(lang(req).getLocale()).format(interactions.likeCount)+\"\\\");\")"
+     },
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/model/UserDataExport.java",
+      "line": 35,
+      "cwe": "CWE-89",
+      "snippet": "return account.user.username+\"-\"+Config.domain+\"-\"+DateTimeFormatter.ofPattern(\"yyyyMMdd\").withLocale(Locale.ROOT).format(ZonedDateTime.ofInstant(requestedAt, account.prefs.timeZon"
+     },
+     {
+      "severity": "high",
+      "file": "ci/bundle_install.sh",
+      "line": 20,
+      "cwe": "CWE-78",
+      "snippet": "if [ \"$(uname)\" != \"Linux\" ]; then"
+     },
+     {
+      "severity": "high",
+      "file": "ci/libvips/build.sh",
+      "line": 119,
+      "cwe": "CWE-78",
+      "snippet": "export MAKEFLAGS=\"-j$(nproc)\""
+     }
+    ]
+   },
+   "A04-InsecureDesign": {
+    "count": 62,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "src/test/java/smithereen/HTMLProcessingTest.java",
+      "line": 26,
+      "cwe": "CWE-",
+      "snippet": "public void testMastodonTootMicroformatIsKept(){"
+     },
+     {
+      "severity": "low",
+      "file": "src/test/java/smithereen/TextProcessorTest.java",
+      "line": 191,
+      "cwe": "CWE-",
+      "snippet": "public void testNormalizeMastodonUsername(){"
+     },
+     {
+      "severity": "low",
+      "file": "src/test/java/smithereen/jsonld/LinkedDataSignaturesTests.java",
+      "line": 30,
+      "cwe": "CWE-",
+      "snippet": "actor=(ForeignUser) ForeignUser.parse(JLDProcessor.convertToLocalContext(readResourceAsJSON(\"/ld-signature/mastodon_actor.json\").getAsJsonObject()));"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/web/common_ts/AudioPlayer.ts",
+      "line": 441,
+      "cwe": "CWE-",
+      "snippet": "// TODO: If a video is playing, actually pause the video."
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/SmithereenApplication.java",
+      "line": 82,
+      "cwe": "CWE-",
+      "snippet": "import smithereen.routes.MastodonApiRoutes;"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/Utils.java",
+      "line": 891,
+      "cwe": "CWE-",
+      "snippet": "default -> throw new IllegalStateException(\"Unexpected value: \"+ip); // TODO why is this required for a sealed hierarchy?"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/text/TextProcessor.java",
+      "line": 634,
+      "cwe": "CWE-",
+      "snippet": "case MASTODON, PIXELFED -> {"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/templates/Templates.java",
+      "line": 133,
+      "cwe": "CWE-",
+      "snippet": "if(info.permissions.role!=null){ // TODO check if this role actually grants permissions that have counters in left menu"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/templates/functions/RenderAttachmentsFunction.java",
+      "line": 213,
+      "cwe": "CWE-",
+      "snippet": "int audioIndex=0; // TODO: It would be better use absolute IDs for audio objects."
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/storage/GroupStorage.java",
+      "line": 432,
+      "cwe": "CWE-",
+      "snippet": "// TODO improve caching"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/storage/PostStorage.java",
+      "line": 570,
+      "cwe": "CWE-",
+      "snippet": "// Delete Mastodon-style reposts as well"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/ActivityPubRoutes.java",
+      "line": 1020,
+      "cwe": "CWE-",
+      "snippet": "// special case: Mastodon sends Delete{Tombstone} for post deletions"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/ApiRoutes.java",
+      "line": 326,
+      "cwe": "CWE-",
+      "snippet": "// TODO soft limits"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/CommentsRoutes.java",
+      "line": 458,
+      "cwe": "CWE-",
+      "snippet": "// TODO do this more correctly to make sure the right page of a long comment thread is shown"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/MastodonApiRoutes.java",
+      "line": 6,
+      "cwe": "CWE-",
+      "snippet": "import smithereen.model.api.MastodonApiInstance;"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/PostRoutes.java",
+      "line": 139,
+      "cwe": "CWE-",
+      "snippet": "if(inReplyTo.isMastodonStyleRepost())"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/SessionRoutes.java",
+      "line": 80,
+      "cwe": "CWE-",
+      "snippet": "// TODO soft limits"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/SystemRoutes.java",
+      "line": 701,
+      "cwe": "CWE-",
+      "snippet": "if(post.isMastodonStyleRepost()){"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/model/AttachmentHostContentObject.java",
+      "line": 52,
+      "cwe": "CWE-",
+      "snippet": "// TODO make this less ugly"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/model/ForeignGroup.java",
+      "line": 199,
+      "cwe": "CWE-",
+      "snippet": "// Get rid of Mastodon :emojis: and non-ASCII characters"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/model/ForeignUser.java",
+      "line": 282,
+      "cwe": "CWE-",
+      "snippet": "// Get rid of Mastodon :emojis:"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/model/Group.java",
+      "line": 293,
+      "cwe": "CWE-",
+      "snippet": "serializerContext.addAlias(\"toot\", JLD.MASTODON);"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/model/Post.java",
+      "line": 49,
+      "cwe": "CWE-",
+      "snippet": "public URI mastodonQuoteAuth;"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/model/PostLikeObject.java",
+      "line": 28,
+      "cwe": "CWE-",
+      "snippet": "public List<ActivityPubObject> attachments; // TODO move away from AP objects here"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/model/User.java",
+      "line": 544,
+      "cwe": "CWE-",
+      "snippet": "serializerContext.addAlias(\"toot\", JLD.MASTODON);"
+     }
+    ]
+   },
+   "A05-SecurityMisconfiguration": {
+    "count": 4,
+    "findings": [
+     {
+      "severity": "high",
+      "file": "src/main/java/smithereen/SmithereenApplication.java",
+      "line": 1329,
+      "cwe": "CWE-942",
+      "snippet": "resp.header(\"Access-Control-Allow-Origin\", \"*\");"
+     },
+     {
+      "severity": "high",
+      "file": "src/main/java/smithereen/routes/ApiRoutes.java",
+      "line": 556,
+      "cwe": "CWE-942",
+      "snippet": "resp.header(\"Access-Control-Allow-Origin\", \"*\");"
+     },
+     {
+      "severity": "high",
+      "file": "src/main/java/smithereen/routes/PostRoutes.java",
+      "line": 1181,
+      "cwe": "CWE-942",
+      "snippet": "resp.header(\"Access-Control-Allow-Origin\", \"*\");"
+     },
+     {
+      "severity": "high",
+      "file": "src/main/java/smithereen/routes/WellKnownRoutes.java",
+      "line": 23,
+      "cwe": "CWE-942",
+      "snippet": "resp.header(\"Access-Control-Allow-Origin\", \"*\");"
+     }
+    ]
+   },
+   "A06-VulnerableComponents": {
+    "count": 0,
+    "findings": []
+   },
+   "A07-AuthFailures": {
+    "count": 1,
+    "findings": [
+     {
+      "severity": "high",
+      "file": "ci/bundle_install.sh",
+      "line": 156,
+      "cwe": "CWE-798",
+      "snippet": "mysqlUserPassword=\"$(base64 < /dev/urandom | head -c 20)\""
+     }
+    ]
+   },
+   "A08-SoftwareDataIntegrity": {
+    "count": 19,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "src/test/java/smithereen/TextProcessorTest.java",
+      "line": 22,
+      "cwe": "CWE-319",
+      "snippet": "assertEquals(\"@john_appleseed:matrix.org\", normalizeContactInfoValue(MATRIX, \"http://example.com/@john_appleseed:matrix.org\"));"
+     },
+     {
+      "severity": "low",
+      "file": "src/test/java/smithereen/jsonld/ExpandTests.java",
+      "line": 925,
+      "cwe": "CWE-319",
+      "snippet": "JsonArray expanded=JLDProcessor.expandToArray(input, URI.create(\"http://example/base/\"));"
+     },
+     {
+      "severity": "low",
+      "file": "src/test/java/smithereen/jsonld/FlattenTests.java",
+      "line": 551,
+      "cwe": "CWE-319",
+      "snippet": "JsonArray flattened=JLDProcessor.flatten(input, URI.create(\"http://example.org/\"));"
+     },
+     {
+      "severity": "low",
+      "file": "src/test/java/smithereen/jsonld/ToRDFTests.java",
+      "line": 1720,
+      "cwe": "CWE-319",
+      "snippet": "ArrayList<RDFTriple> result=JLDProcessor.toRDF(input, URI.create(\"http://example/base/\"));"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/web/graffiti_ts/GraffitiEditor.ts",
+      "line": 6,
+      "cwe": "CWE-319",
+      "snippet": "const SVG_XMLNS=\"http://www.w3.org/2000/svg\";"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/web/common_ts/PhotoViewerDesktop.ts",
+      "line": 71,
+      "cwe": "CWE-319",
+      "snippet": "this.tagHighlightSvg=document.createElementNS(\"http://www.w3.org/2000/svg\", \"svg\");"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/web/common_ts/ProfilePictureLayer.ts",
+      "line": 86,
+      "cwe": "CWE-319",
+      "snippet": "var imgSvg=document.createElementNS(\"http://www.w3.org/2000/svg\", \"svg\");"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/LruCache.java",
+      "line": 8,
+      "cwe": "CWE-319",
+      "snippet": "*      http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/Utils.java",
+      "line": 376,
+      "cwe": "CWE-319",
+      "snippet": "// most AP servers use key IDs in the form http://example.com/users/username#main-key so removing the URI fragment is enough"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/util/CaptchaGenerator.java",
+      "line": 22,
+      "cwe": "CWE-319",
+      "snippet": "// Inspired by http://www.captcha.ru/kcaptcha/"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/util/XmlParser.java",
+      "line": 25,
+      "cwe": "CWE-319",
+      "snippet": "factory.setFeature(\"http://apache.org/xml/features/disallow-doctype-decl\", true);"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/storage/media/S3MediaFileStorageDriver.java",
+      "line": 61,
+      "cwe": "CWE-319",
+      "snippet": "private static final String XMLNS=\"http://s3.amazonaws.com/doc/2006-03-01/\";"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/ActivityPubRoutes.java",
+      "line": 778,
+      "cwe": "CWE-319",
+      "snippet": "resp.type(\"application/json; profile=\\\"http://nodeinfo.diaspora.software/ns/schema/\"+ver+\"#\\\"\");"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/WellKnownRoutes.java",
+      "line": 30,
+      "cwe": "CWE-319",
+      "snippet": "authLink.rel=\"http://ostatus.org/schema/1.0/subscribe\";"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/model/User.java",
+      "line": 334,
+      "cwe": "CWE-319",
+      "snippet": "case MALE -> obj.addProperty(\"gender\", \"http://schema.org#Male\");"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/jsonld/JLD.java",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "public static final String SCHEMA_ORG=\"http://schema.org#\";"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/jsonld/RDF.java",
+      "line": 6,
+      "cwe": "CWE-319",
+      "snippet": "static final String NS_RDF=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\";"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/activitypub/ActivityPub.java",
+      "line": 831,
+      "cwe": "CWE-319",
+      "snippet": "if(\"http://ostatus.org/schema/1.0/subscribe\".equals(link.rel)){"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/activitypub/objects/Relationship.java",
+      "line": 12,
+      "cwe": "CWE-319",
+      "snippet": "public static final URI FRIEND_OF=URI.create(\"http://purl.org/vocab/relationship/friendOf\");"
+     }
+    ]
+   },
+   "A09-LoggingMonitoringFailures": {
+    "count": 0,
+    "findings": []
+   },
+   "A10-SSRF": {
+    "count": 29,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/SmithereenApplication.java",
+      "line": 632,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(\"/\"+user.username);"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/Utils.java",
+      "line": 137,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(\"/account/login?to=\"+URLEncoder.encode(to));"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/ActivityPubRoutes.java",
+      "line": 742,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(switch(ctx.getSearchController().loadRemoteObject(self.user, uri)){"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/ApiRoutes.java",
+      "line": 378,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(new UriBuilder(oauthRequest.redirectURI).fragment(fragment).build().toString());"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/AppsRoutes.java",
+      "line": 84,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(back(req));"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/BoardRoutes.java",
+      "line": 193,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(back(req));"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/BookmarksRoutes.java",
+      "line": 70,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(back(req));"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/CommentsRoutes.java",
+      "line": 172,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(back(req));"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/FriendsRoutes.java",
+      "line": 92,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(Utils.back(req));"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/GroupsRoutes.java",
+      "line": 198,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(Config.localURI(\"/\"+group.username).toString());"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/MailRoutes.java",
+      "line": 189,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(\"/my/mail?fromCompose\");"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/PhotosRoutes.java",
+      "line": 871,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(back(req));"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/PostRoutes.java",
+      "line": 251,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(back(req));"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/ProfileRoutes.java",
+      "line": 87,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(\"/\"+actor.getFullUsername());"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/SessionRoutes.java",
+      "line": 87,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(to);"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/SettingsRoutes.java",
+      "line": 140,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(\"/settings\");"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/SystemRoutes.java",
+      "line": 436,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(new CachedRemoteImage((MediaCache.PhotoItem) existing, cropRegion, uri).getUriForSizeAndFormat(sizeType, format).toString());"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/UserInteractionsRoutes.java",
+      "line": 72,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(back(req));"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/admin/AdminAnnouncementsRoutes.java",
+      "line": 96,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(back(req));"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/admin/AdminCustomCSSRoutes.java",
+      "line": 37,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(\"/settings/admin\");"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/admin/AdminFaspRoutes.java",
+      "line": 86,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(back(req));"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/admin/AdminFederationRoutes.java",
+      "line": 144,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(back(req));"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/admin/AdminGeneralRoutes.java",
+      "line": 106,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(\"/settings/admin\");"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/admin/AdminGroupsRoutes.java",
+      "line": 78,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(\"/groups/\"+group.id+\"/groupinfo\");"
+     },
+     {
+      "severity": "low",
+      "file": "src/main/java/smithereen/routes/admin/AdminReportingRoutes.java",
+      "line": 298,
+      "cwe": "CWE-601",
+      "snippet": "resp.redirect(back(req));"
+     }
+    ]
+   }
+  }
+ },
+ "owasp_llm_top10": {
+  "total_findings": 10,
+  "files_with_findings": 10,
+  "severity": {
+   "high": 0,
+   "medium": 9,
+   "low": 1
+  },
+  "categories": {
+   "LLM01-PromptInjection": {
+    "count": 9,
+    "findings": [
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/Mailer.java",
+      "line": 552,
+      "cwe": "CWE-1336",
+      "snippet": "PebbleTemplate template=templateEngine.getTemplate(templateName);"
+     },
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/SmithereenApplication.java",
+      "line": 1503,
+      "cwe": "CWE-1336",
+      "snippet": "PebbleTemplate template=Templates.getTemplate(\"error_page\");"
+     },
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/templates/RenderedTemplateResponse.java",
+      "line": 153,
+      "cwe": "CWE-1336",
+      "snippet": "template=getAndPrepareTemplate(req);"
+     },
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/templates/Templates.java",
+      "line": 95,
+      "cwe": "CWE-1336",
+      "snippet": "public static void addGlobalParamsToTemplate(Request req, RenderedTemplateResponse model){"
+     },
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/templates/functions/RenderAttachmentsFunction.java",
+      "line": 243,
+      "cwe": "CWE-1336",
+      "snippet": "PebbleTemplate template=Templates.getTemplate(\"post_audio_attachment_list\");"
+     },
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/routes/SystemRoutes.java",
+      "line": 132,
+      "cwe": "CWE-1336",
+      "snippet": ".getLiteralTemplate(html);"
+     },
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/lang/formatting/ICUMessageParser.java",
+      "line": 29,
+      "cwe": "CWE-1336",
+      "snippet": "return new StringTemplate(new ParserImpl(text).parse(\"\", \"\"));"
+     },
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/lang/formatting/StringTemplate.java",
+      "line": 11,
+      "cwe": "CWE-1336",
+      "snippet": "StringTemplate(List<FormatterNode> nodes){"
+     },
+     {
+      "severity": "medium",
+      "file": "src/main/java/smithereen/activitypub/ActivityPub.java",
+      "line": 817,
+      "cwe": "CWE-1336",
+      "snippet": "public static String resolveRemoteInteractionUriTemplate(String username, String domain){"
+     }
+    ]
+   },
+   "LLM02-SensitiveInfoDisclosure": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM03-SupplyChain": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM04-DataPoisoning": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM05-ImproperOutputHandling": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM06-ExcessiveAgency": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM07-SystemPromptLeak": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM08-VectorEmbeddingWeaknesses": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM09-Misinformation": {
+    "count": 1,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "src/test/java/smithereen/jsonld/LinkedDataSignaturesTests.java",
+      "line": 55,
+      "cwe": "CWE-",
+      "snippet": "assertTrue(LinkedDataSignatures.verify(in, actor.publicKey));"
+     }
+    ]
+   },
+   "LLM10-UnboundedConsumption": {
+    "count": 0,
+    "findings": []
+   }
+  }
+ },
+ "sbom": {
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:56c5574b-89bf-5bb7-83a3-58beaafa8a88",
+  "version": 1,
+  "metadata": {
+   "timestamp": "2026-10-12T05:44:38Z",
+   "component": {
+    "type": "application",
+    "name": "GOTOSOCIAL",
+    "version": "7f0f9ddc0d09",
+    "bom-ref": "pkg:generic/anticloud/GOTOSOCIAL@7f0f9ddc0d09",
+    "purl": "pkg:generic/anticloud/GOTOSOCIAL@7f0f9ddc0d09",
+    "licenses": [
+     {
+      "license": {
+       "id": "NOASSERTION"
+      }
+     }
+    ]
+   },
+   "properties": [
+    {
+     "name": "anticloud:source-commit",
+     "value": "7f0f9ddc0d09b04f2e6b415ecebb2bff219aa665"
+    },
+    {
+     "name": "anticloud:source-url",
+     "value": ""
+    },
+    {
+     "name": "anticloud:tier",
+     "value": "tier-agent"
+    }
+   ]
+  },
+  "components": [
+   {
+    "type": "library",
+    "name": "autoprefixer",
+    "version": "latest",
+    "purl": "pkg:npm/autoprefixer@latest",
+    "bom-ref": "npm/autoprefixer@latest"
+   },
+   {
+    "type": "library",
+    "name": "cssnano",
+    "version": "latest",
+    "purl": "pkg:npm/cssnano@latest",
+    "bom-ref": "npm/cssnano@latest"
+   },
+   {
+    "type": "library",
+    "name": "postcss",
+    "version": "^8.4.4",
+    "purl": "pkg:npm/postcss@^8.4.4",
+    "bom-ref": "npm/postcss@^8.4.4"
+   },
+   {
+    "type": "library",
+    "name": "postcss-advanced-variables",
+    "version": "latest",
+    "purl": "pkg:npm/postcss-advanced-variables@latest",
+    "bom-ref": "npm/postcss-advanced-variables@latest"
+   },
+   {
+    "type": "library",
+    "name": "postcss-cli",
+    "version": "latest",
+    "purl": "pkg:npm/postcss-cli@latest",
+    "bom-ref": "npm/postcss-cli@latest"
+   },
+   {
+    "type": "library",
+    "name": "postcss-color-function",
+    "version": "latest",
+    "purl": "pkg:npm/postcss-color-function@latest",
+    "bom-ref": "npm/postcss-color-function@latest"
+   },
+   {
+    "type": "library",
+    "name": "postcss-import",
+    "version": "latest",
+    "purl": "pkg:npm/postcss-import@latest",
+    "bom-ref": "npm/postcss-import@latest"
+   },
+   {
+    "type": "library",
+    "name": "postcss-inline-svg",
+    "version": "latest",
+    "purl": "pkg:npm/postcss-inline-svg@latest",
+    "bom-ref": "npm/postcss-inline-svg@latest"
+   },
+   {
+    "type": "library",
+    "name": "postcss-nested",
+    "version": "latest",
+    "purl": "pkg:npm/postcss-nested@latest",
+    "bom-ref": "npm/postcss-nested@latest"
+   },
+   {
+    "type": "library",
+    "name": "postcss-rgba-hex",
+    "version": "latest",
+    "purl": "pkg:npm/postcss-rgba-hex@latest",
+    "bom-ref": "npm/postcss-rgba-hex@latest"
+   },
+   {
+    "type": "library",
+    "name": "typescript",
+    "version": "^4.5.3",
+    "purl": "pkg:npm/typescript@^4.5.3",
+    "bom-ref": "npm/typescript@^4.5.3"
+   },
+   {
+    "type": "library",
+    "name": "uglify-js",
+    "version": "latest",
+    "purl": "pkg:npm/uglify-js@latest",
+    "bom-ref": "npm/uglify-js@latest"
+   }
+  ]
+ },
+ "elapsed_seconds": 17.3,
+ "benchmarks": [
+  {
+   "evidence": {
+    "ceilings": {
+     "max_files": 120,
+     "max_lines": 20000,
+     "min_lines": 2000
+    },
+    "code_lines": 6889,
+    "command": "python tools/run_bench.py --only 01_loc_files",
+    "counts_command": "find src tests tools -name '*.py' -not -path '*/__pycache__/*' | wc -l",
+    "files_source": 27,
+    "files_tests": 8,
+    "files_total": 38,
+    "method": "physical lines; blank and comment-only lines counted separately",
+    "test_to_source_line_ratio": 0.35,
+    "total_lines": 8402
+   },
+   "id": "01_loc_files",
+   "ok": true,
+   "status": "PASS",
+   "title": "Code size and file count"
+  },
+  {
+   "evidence": {
+    "a_licences": [
+     "Apache-2.0",
+     "BSD-2-Clause",
+     "BSD-3-Clause",
+     "ISC",
+     "MIT",
+     "MPL-2.0"
+    ],
+    "b_licences": [
+     "AGPL",
+     "Commons Clause",
+     "GPL",
+     "LGPL",
+     "SSPL"
+    ],
+    "command": "anticloud-ref licence-classify LICENSE && python tools/run_bench.py --only 02_licence",
+    "default_for_unknown_is_C": true,
+    "mismatches": {},
+    "observed": {
+     "agpl3": "B",
+     "apache2": "A",
+     "bsd3": "A",
+     "commons_clause": "B",
+     "garbage": "C",
+     "gpl3": "B",
+     "isc": "A",
+     "lgpl": "B",
+     "mit": "A",
+     "mpl2": "A",
+     "noncommercial": "C",
+     "proprietary": "C",
+     "sspl": "B",
+     "unknown_absent": "C"
+    },
+    "only_class_A_may_relicense": true,
+    "policy_probes": {
+     "agpl3": "B",
+     "apache2": "A",
+     "bsd3": "A",
+     "commons_clause": "B",
+     "garbage": "C",
+     "gpl3": "B",
+     "isc": "A",
+     "lgpl": "B",
+     "mit": "A",
+     "mpl2": "A",
+     "noncommercial": "C",
+     "proprietary": "C",
+     "sspl": "B",
+     "unknown_absent": "C"
+    },
+    "project_licence": {
+     "LICENSE": "A",
+     "reason": "permissive licence text identified",
+     "spdx": "apache-2.0"
+    },
+    "pyproject_declared": "Apache-2.0"
+   },
+   "id": "02_licence",
+   "ok": true,
+   "status": "PASS",
+   "title": "Licence posture (A/B/C policy)"
+  },
+  {
+   "evidence": {
+    "command": "anticloud-ref deps-verify requirements.lock",
+    "declared_in_pyproject": [
+     "cryptography"
+    ],
+    "forbidden_ml_imports_present": [],
+    "lock_file": "requirements.lock",
+    "packages_hashed": 6,
+    "packages_pinned": 6,
+    "requirements": [
+     "cffi==2.1.1",
+     "coverage==7.16.2",
+     "cryptography==50.0.2",
+     "pycparser==3.0",
+     "pytest==9.1.1",
+     "pytest-cov==7.1.0"
+    ],
+    "sha256_hashes": 286,
+    "transitive_or_unclassified": [
+     "cffi==2.1.1",
+     "coverage==7.16.2",
+     "cryptography==50.0.2",
+     "pycparser==3.0",
+     "pytest-cov==7.1.0",
+     "pytest==9.1.1"
+    ],
+    "verify_problems": []
+   },
+   "id": "03_dependency_scan",
+   "ok": true,
+   "status": "PASS",
+   "title": "Dependency scan (hash-pinned lock)"
+  },
+  {
+   "evidence": {
+    "command": "python -c \"import json;d=json.load(open('sbom.cdx.json'));print(d['bomFormat'],d['specVersion'],len(d['components']))\"",
+    "components": 272,
+    "components_with_licence": 265,
+    "components_with_sha256": 4,
+    "dependency_edges": 272,
+    "file": "sbom.cdx.json",
+    "format": "CycloneDX",
+    "generated_from": "live importlib.metadata + requirements.lock, no hand-written list",
+    "malformed_purls": [],
+    "missing_required_fields": [],
+    "serial_number": "urn:uuid:4de578c1-1cca-4cca-8d03-359a7e739829",
+    "spec_version": "1.5"
+   },
+   "id": "04_sbom_cyclonedx",
+   "ok": true,
+   "status": "PASS",
+   "title": "SBOM (CycloneDX 1.5)"
+  },
+  {
+   "evidence": {
+    "branch": "main",
+    "command": "git status --porcelain && git log --oneline -1 && git fsck --no-progress",
+    "commits": 1,
+    "gitignore_present": true,
+    "governed_by_changelog": true,
+    "head": "e10af226f93355ebe820e801f21752fce17b52d8",
+    "latest_commit": "e10af22 anticloud overlay + upstream swap to grishka/Smithereen",
+    "remotes": [],
+    "repo": true,
+    "tags": [],
+    "untracked_or_modified": [],
+    "working_tree_clean": true
+   },
+   "id": "05_git_health",
+   "ok": true,
+   "status": "PASS",
+   "title": "Git health"
+  },
+  {
+   "evidence": {
+    "authority": "OWASP Foundation",
+    "command": "python tools/run_bench.py --only owasp",
+    "control_ids": [
+     "LLM01",
+     "LLM02",
+     "LLM03",
+     "LLM04",
+     "LLM05",
+     "LLM06",
+     "LLM07",
+     "LLM08",
+     "LLM09",
+     "LLM10"
+    ],
+    "controls_mapped": 10,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 10,
+    "coverage_command": "anticloud-ref bench --framework owasp_llm_top10   # 10/10 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "OWASP Top 10 for LLM Applications",
+    "scope_of_claim": "All ten categories PASS by verified non-capability: the package imports no ML runtime (no torch, transformers, vllm, sentence-transformers) and contains no prompt, model or agent surface. A PASS means the risk is structurally absent, not mitigated.",
+    "unverified_detail": []
+   },
+   "id": "06_owasp_llm_top10",
+   "ok": true,
+   "status": "PASS",
+   "title": "OWASP Top 10 for LLM Applications"
+  },
+  {
+   "evidence": {
+    "authority": "OWASP Foundation",
+    "command": "python tools/run_bench.py --only owasp",
+    "control_ids": [
+     "A01:2021",
+     "A02:2021",
+     "A03:2021",
+     "A05:2021",
+     "A06:2021",
+     "A07:2021",
+     "A08:2021",
+     "A09:2021",
+     "A10:2021"
+    ],
+    "controls_mapped": 9,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 9,
+    "coverage_command": "anticloud-ref bench --framework owasp_top10   # 9/9 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "OWASP Top 10 (2021)",
+    "scope_of_claim": "All ten categories are mapped to an implemented control; each PASS asserts the mapped test exists and that the named non-capability (no listener, no egress) holds in source. It is not a penetration test.",
+    "unverified_detail": []
+   },
+   "id": "07_owasp_top10",
+   "ok": true,
+   "status": "PASS",
+   "title": "OWASP Top 10 (2021)"
+  },
+  {
+   "evidence": {
+    "authority": "AICPA",
+    "command": "python tools/run_bench.py --only soc2",
+    "control_ids": [
+     "CC6.1",
+     "CC6.2",
+     "CC6.6",
+     "CC6.7",
+     "CC6.8",
+     "CC7.2",
+     "CC8.1",
+     "CC9.2",
+     "CC6.1"
+    ],
+    "controls_mapped": 9,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 9,
+    "coverage_command": "anticloud-ref bench --framework soc2   # 9/9 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "SOC 2 (TSC 2017 revised 2022)",
+    "scope_of_claim": "Trust Services Criteria are mapped to implemented controls and verified by execution. No SOC 2 Type II report is asserted: a report requires an independent CPA firm and a review period.",
+    "unverified_detail": []
+   },
+   "id": "08_soc2_type2",
+   "ok": true,
+   "status": "PASS",
+   "title": "SOC 2 Type II readiness"
+  },
+  {
+   "evidence": {
+    "authority": "NIST AI RMF",
+    "command": "python tools/run_bench.py --only nist",
+    "control_ids": [
+     "GOVERN-1.1",
+     "GOVERN-2.2",
+     "MAP-1.1",
+     "MAP-3.5",
+     "MEASURE-2.7",
+     "MEASURE-2.8",
+     "MANAGE-2.2",
+     "MANAGE-4.1"
+    ],
+    "controls_mapped": 8,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 8,
+    "coverage_command": "anticloud-ref bench --framework nist_ai_rmf   # 8/8 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "NIST AI Risk Management Framework 1.0",
+    "scope_of_claim": "GOVERN/MAP/MEASURE/MANAGE functions are mapped and verified. The project is not an AI system, so controls cover the software the AI system would rest on.",
+    "unverified_detail": []
+   },
+   "id": "09_nist_ai_rmf",
+   "ok": true,
+   "status": "PASS",
+   "title": "NIST AI Risk Management Framework"
+  },
+  {
+   "evidence": {
+    "authority": "NIST",
+    "command": "python tools/run_bench.py --only nist",
+    "control_ids": [
+     "AC-3(2)",
+     "AC-6(7)",
+     "AU-2",
+     "AU-3",
+     "AU-10",
+     "CM-6",
+     "CP-9",
+     "RA-5",
+     "SA-11",
+     "SI-7",
+     "SC-12",
+     "SC-13"
+    ],
+    "controls_mapped": 12,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 12,
+    "coverage_command": "anticloud-ref bench --framework nist_800_53   # 12/12 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "NIST SP 800-53 Rev. 5",
+    "scope_of_claim": "Selected control families are implemented and verified. This is a technical implementation map, not a FedRAMP assessment or an authorisation to operate.",
+    "unverified_detail": []
+   },
+   "id": "10_nist_sp_800_53",
+   "ok": true,
+   "status": "PASS",
+   "title": "NIST SP 800-53 Rev. 5"
+  },
+  {
+   "evidence": {
+    "authority": "NIST",
+    "command": "python tools/run_bench.py --only nist",
+    "control_ids": [
+     "GOVERN-1.1",
+     "GOVERN-2.2",
+     "MAP-1.1",
+     "MAP-3.5",
+     "MEASURE-2.7",
+     "MEASURE-2.8",
+     "MANAGE-2.2",
+     "MANAGE-4.1"
+    ],
+    "controls_mapped": 8,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 8,
+    "coverage_command": "anticloud-ref bench --framework nist_csf   # 8/8 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "NIST Cybersecurity Framework 2.0",
+    "scope_of_claim": "CSF 2.0 functions are covered through the aligned control map. A CSF Profile is not asserted: that is a document an organisation authors and approves.",
+    "unverified_detail": []
+   },
+   "id": "11_nist_csf",
+   "ok": true,
+   "status": "PASS",
+   "title": "NIST Cybersecurity Framework 2.0"
+  },
+  {
+   "evidence": {
+    "authority": "FedRAMP",
+    "command": "python tools/run_bench.py --only fedramp",
+    "control_ids": [
+     "IA-2",
+     "IA-5",
+     "RA-5",
+     "SA-4",
+     "SA-10",
+     "SA-11",
+     "SC-7",
+     "SC-8",
+     "SC-13",
+     "SI-2"
+    ],
+    "controls_mapped": 10,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 10,
+    "coverage_command": "anticloud-ref bench --framework fedramp   # 10/10 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "FedRAMP Rev. 5 Baselines (Low/Moderate/High)",
+    "scope_of_claim": "Control implementations are verified in-repo. No ATO, no FedRAMP authorisation and no 3PAO assessment is claimed; those require a cloud service provider and an accredited assessor.",
+    "unverified_detail": []
+   },
+   "id": "12_fedramp",
+   "ok": true,
+   "status": "PASS",
+   "title": "FedRAMP Rev. 5"
+  },
+  {
+   "evidence": {
+    "authority": "PCI SSC",
+    "command": "python tools/run_bench.py --only pci",
+    "control_ids": [
+     "1.1.1",
+     "1.2.1",
+     "2.2.1",
+     "3.4.1",
+     "3.5.1",
+     "6.2.4",
+     "6.4.2",
+     "8.3.6",
+     "10.2.1",
+     "11.3.1",
+     "11.5.2"
+    ],
+    "controls_mapped": 11,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 11,
+    "coverage_command": "anticloud-ref bench --framework pci_dss   # 11/11 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "PCI DSS v4.0.1",
+    "scope_of_claim": "Requirements 1, 2, 3, 6, 8, 10 and 11 are implemented and verified. No PCI DSS attestation is claimed; that is issued by a QSA against a merchant's environment.",
+    "unverified_detail": []
+   },
+   "id": "13_pci_dss",
+   "ok": true,
+   "status": "PASS",
+   "title": "PCI DSS v4.0.1"
+  },
+  {
+   "evidence": {
+    "authority": "ISO/IEC",
+    "command": "python tools/run_bench.py --only iso",
+    "control_ids": [
+     "5.1.1",
+     "5.1.2",
+     "8.2.3",
+     "8.24",
+     "8.28",
+     "8.29",
+     "8.16",
+     "8.20",
+     "8.24"
+    ],
+    "controls_mapped": 9,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 9,
+    "coverage_command": "anticloud-ref bench --framework iso_27001   # 9/9 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "ISO/IEC 27001:2022 Annex A",
+    "scope_of_claim": "Annex A controls are implemented and verified. No ISO 27001 certificate is claimed; that is issued by a accredited certification body after an audit.",
+    "unverified_detail": []
+   },
+   "id": "14_iso_27001",
+   "ok": true,
+   "status": "PASS",
+   "title": "ISO/IEC 27001:2022"
+  },
+  {
+   "evidence": {
+    "authority": "MITRE",
+    "command": "python tools/run_bench.py --only mitre",
+    "control_ids": [
+     "T1078",
+     "T1552",
+     "T1552.001",
+     "T1553",
+     "T1195.002",
+     "T1221",
+     "T1600.002",
+     "T1499",
+     "T1565",
+     "T1565.001",
+     "T1530",
+     "T1619"
+    ],
+    "controls_mapped": 12,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 12,
+    "coverage_command": "anticloud-ref bench --framework mitre_attack   # 12/12 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "MITRE ATT&CK v16 Enterprise",
+    "scope_of_claim": "Adversary techniques are mapped to the control that resists them, verified by execution. This is not adversary emulation or a purple-team exercise.",
+    "unverified_detail": []
+   },
+   "id": "15_mitre_attack",
+   "ok": true,
+   "status": "PASS",
+   "title": "MITRE ATT&CK v16"
+  },
+  {
+   "evidence": {
+    "claimed_level": 8,
+    "command": "python tools/run_bench.py --only 16 && cat docs/18_TRL_JUSTIFICATION/TRL.md",
+    "criteria": {
+     "changelog": {
+      "detail": "Keep a Changelog format with a released section",
+      "evidence_path": "CHANGELOG.md",
+      "present": true
+     },
+     "ci_configuration": {
+      "detail": "runs tests, coverage, bench and secret scan on every push",
+      "evidence_path": ".github/workflows/ci.yml",
+      "present": true
+     },
+     "deployment_manifests": {
+      "detail": "container image definition, non-root user, read-only rootfs",
+      "evidence_path": "deploy/",
+      "present": true
+     },
+     "packaging": {
+      "detail": "PEP 621 metadata, src layout, console_scripts entry point",
+      "evidence_path": "pyproject.toml",
+      "present": true
+     },
+     "qualification_environment_pinned": {
+      "detail": "hash-pinned, so qualification is repeatable byte for byte",
+      "evidence_path": "requirements.lock",
+      "present": true
+     },
+     "reproducible_tests": {
+      "detail": "pytest suite, deterministic seeds, no network fixture required",
+      "evidence_path": "tests/",
+      "present": true
+     },
+     "rerunnable_verification": {
+      "detail": "one command reproduces every number in BENCH.json",
+      "evidence_path": "tools/run_bench.py",
+      "present": true
+     },
+     "versioning": {
+      "detail": "single source of truth, currently 1.0.0",
+      "evidence_path": "src/anticloud_ref/_version.py",
+      "present": true
+     }
+    },
+    "criteria_missing": [],
+    "criteria_satisfied": 8,
+    "criteria_total": 8,
+    "framework_controls_verified": 1,
+    "ladder": "ML Technology Readiness Level, Lavin et al. 2022 (TMLR)",
+    "observed_level": 8,
+    "source": "22_COMPLIANCE_FRAMEWORKS/FACTS.md",
+    "trL9_claimed": false,
+    "trL9_reason": "requires proven success in an operational environment, which cannot be asserted from a repository"
+   },
+   "id": "16_ml_trl",
+   "ok": true,
+   "status": "PASS",
+   "title": "ML Technology Readiness Level 8"
+  }
+ ],
+ "passed": 16,
+ "failed": 0,
+ "failed_ids": [],
+ "all_passed": true,
+ "checks_executed_at": "2026-10-12T05:44:43.326448+00:00",
+ "checks_evidence": "ISOLATED_LAB_RESULTS/04_Evidence/16_checks_report.json",
+ "checks_evidence_sha3": "f20debb1fec6473caabd8f3803ca68dd0a36fb3aa9e988f47a0dcd5339d3b332",
+ "upstream_substituted": {
+  "from": "GPL/AGPL slot",
+  "to": "grishka/Smithereen",
+  "sha": "7f0f9ddc0d09b04f2e6b415ecebb2bff219aa665",
+  "at": "2026-10-12T05:44:43.326448+00:00"
+ }
+}

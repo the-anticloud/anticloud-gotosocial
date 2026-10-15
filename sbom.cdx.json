@@ -1,0 +1,123 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:56c5574b-89bf-5bb7-83a3-58beaafa8a88",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-12T05:44:38Z",
+    "component": {
+      "type": "application",
+      "name": "GOTOSOCIAL",
+      "version": "7f0f9ddc0d09",
+      "bom-ref": "pkg:generic/anticloud/GOTOSOCIAL@7f0f9ddc0d09",
+      "purl": "pkg:generic/anticloud/GOTOSOCIAL@7f0f9ddc0d09",
+      "licenses": [
+        {
+          "license": {
+            "id": "NOASSERTION"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": "7f0f9ddc0d09b04f2e6b415ecebb2bff219aa665"
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": ""
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "autoprefixer",
+      "version": "latest",
+      "purl": "pkg:npm/autoprefixer@latest",
+      "bom-ref": "npm/autoprefixer@latest"
+    },
+    {
+      "type": "library",
+      "name": "cssnano",
+      "version": "latest",
+      "purl": "pkg:npm/cssnano@latest",
+      "bom-ref": "npm/cssnano@latest"
+    },
+    {
+      "type": "library",
+      "name": "postcss",
+      "version": "^8.4.4",
+      "purl": "pkg:npm/postcss@^8.4.4",
+      "bom-ref": "npm/postcss@^8.4.4"
+    },
+    {
+      "type": "library",
+      "name": "postcss-advanced-variables",
+      "version": "latest",
+      "purl": "pkg:npm/postcss-advanced-variables@latest",
+      "bom-ref": "npm/postcss-advanced-variables@latest"
+    },
+    {
+      "type": "library",
+      "name": "postcss-cli",
+      "version": "latest",
+      "purl": "pkg:npm/postcss-cli@latest",
+      "bom-ref": "npm/postcss-cli@latest"
+    },
+    {
+      "type": "library",
+      "name": "postcss-color-function",
+      "version": "latest",
+      "purl": "pkg:npm/postcss-color-function@latest",
+      "bom-ref": "npm/postcss-color-function@latest"
+    },
+    {
+      "type": "library",
+      "name": "postcss-import",
+      "version": "latest",
+      "purl": "pkg:npm/postcss-import@latest",
+      "bom-ref": "npm/postcss-import@latest"
+    },
+    {
+      "type": "library",
+      "name": "postcss-inline-svg",
+      "version": "latest",
+      "purl": "pkg:npm/postcss-inline-svg@latest",
+      "bom-ref": "npm/postcss-inline-svg@latest"
+    },
+    {
+      "type": "library",
+      "name": "postcss-nested",
+      "version": "latest",
+      "purl": "pkg:npm/postcss-nested@latest",
+      "bom-ref": "npm/postcss-nested@latest"
+    },
+    {
+      "type": "library",
+      "name": "postcss-rgba-hex",
+      "version": "latest",
+      "purl": "pkg:npm/postcss-rgba-hex@latest",
+      "bom-ref": "npm/postcss-rgba-hex@latest"
+    },
+    {
+      "type": "library",
+      "name": "typescript",
+      "version": "^4.5.3",
+      "purl": "pkg:npm/typescript@^4.5.3",
+      "bom-ref": "npm/typescript@^4.5.3"
+    },
+    {
+      "type": "library",
+      "name": "uglify-js",
+      "version": "latest",
+      "purl": "pkg:npm/uglify-js@latest",
+      "bom-ref": "npm/uglify-js@latest"
+    }
+  ]
+}
